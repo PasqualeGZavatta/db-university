@@ -44,6 +44,11 @@ AND YEAR = '1'
 
 {/*Es6: Selezionare tutti i corsi di laurea magistrale (38)*/}
 
+SELECT COUNT(*)
+FROM degrees
+WHERE level = 'magistrale'
+;
+
 {/*Es7: Da quanti dipartimenti è composta l'università? (12)*/}
 
 SELECT COUNT(*)
