@@ -30,12 +30,20 @@ WHERE YEAR(date_of_birth) < YEAR(CURDATE()) - 30
 ORDER BY date_of_birth DESC
    ;
 
-{/*Es4:*/}
+{/*Es4: Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di
+laurea (286)*/}
 
-{/*Es5:*/}
+SELECT id, name
+FROM courses 
+WHERE period = 'I semestre'
+AND YEAR = '1'
+;
 
-{/*Es6:*/}
+{/*Es5: Selezionare tutti gli appelli d'esame che avvengono nel pomeriggio (dopo le 14) del
+20/06/2020 (21)*/}
 
-{/*Es7:*/}
+{/*Es6: Selezionare tutti i corsi di laurea magistrale (38)*/}
 
-{/*Es8:*/}
+{/*Es7: Da quanti dipartimenti è composta l'università? (12)*/}
+
+{/*Es8: Quanti sono gli insegnanti che non hanno un numero di telefono? (50)*/}
