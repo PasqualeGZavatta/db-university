@@ -46,4 +46,8 @@ AND YEAR = '1'
 
 {/*Es7: Da quanti dipartimenti è composta l'università? (12)*/}
 
+SELECT COUNT(*)
+FROM departments
+;
+
 {/*Es8: Quanti sono gli insegnanti che non hanno un numero di telefono? (50)*/}
