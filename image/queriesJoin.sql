@@ -52,6 +52,20 @@ ON t.id = ct.teacher_id
 ORDER BY d.name , c.name, t.surname ,t.name 
 ;
 
-{/*Es: */}
+{/*Es: 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)*/}
+
+SELECT DISTINCT  t.name AS teacher_name, t.surname AS teacher_surname, d2.name AS department_name
+FROM teachers t 
+JOIN course_teacher ct 
+ON ct.teacher_id = t.id 
+JOIN courses c 
+ON c.id = ct.course_id 
+JOIN degrees d 
+ON d.id = c.degree_id 
+JOIN departments d2 
+ON d2.id = d.department_id 
+WHERE d2.id = 5
+ORDER BY t.surname ,t.name 
+;
 
 {/*Es: */}
