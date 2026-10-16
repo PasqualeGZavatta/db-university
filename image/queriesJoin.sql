@@ -39,7 +39,18 @@ ON d2.id = d.department_id
 ORDER BY s.surname ,s.name 
 ;
 
-{/*Es: */}
+{/*Es: 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti*/}
+
+SELECT d.name AS degree_course, c.name AS course_name, t.name AS teacher_name, t.surname AS teacher_surname
+FROM degrees d 
+JOIN courses c 
+ON d.id  = c.degree_id 
+JOIN course_teacher ct 
+ON c.id = ct.course_id 
+JOIN teachers t 
+ON t.id = ct.teacher_id 
+ORDER BY d.name , c.name, t.surname ,t.name 
+;
 
 {/*Es: */}
 
