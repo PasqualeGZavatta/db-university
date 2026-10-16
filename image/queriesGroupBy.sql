@@ -14,6 +14,15 @@ GROUP BY office_address
 ORDER BY office_address 
 ;
 
-{/*Es: */}
+{/*Es: 3. Calcolare la media dei voti di ogni appello d'esame*/}
+
+SELECT AVG(vote )AS media_voti , COUNT(vote) AS numero_voti, name AS nome_corso
+FROM exam_student
+JOIN exams 
+ON exam_student.exam_id = exams.id 
+JOIN courses  
+ON courses.id = exams.course_id 
+GROUP BY exam_id ,name
+;
 
 {/*Es: */}
