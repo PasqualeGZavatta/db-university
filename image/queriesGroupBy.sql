@@ -25,4 +25,11 @@ ON courses.id = exams.course_id
 GROUP BY exam_id ,name
 ;
 
-{/*Es: */}
+{/*Es: 4. Contare quanti corsi di laurea ci sono per ogni dipartimento*/}
+
+SELECT departments.name AS department, COUNT(*) AS degrees_count
+FROM departments 
+JOIN degrees  
+ON departments.id = degrees.department_id 
+GROUP BY departments.name 
+;
