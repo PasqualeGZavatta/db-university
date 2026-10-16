@@ -68,4 +68,16 @@ WHERE d2.id = 5
 ORDER BY t.surname ,t.name 
 ;
 
-{/*Es: */}
+{/*Es: 7. BONUS: Selezionare per ogni studente il numero di tentativi sostenuti per ogni esame, stampando anche il voto massimo. Successivamente, filtrare i tentativi con voto minimo 18.*/}
+
+SELECT s.name AS student_name, s.surname AS student_surname, c.name AS courseExam_name, COUNT(es.student_id ) AS tentativi_esame, MAX(es.vote ) AS voto_massimo
+FROM students s 
+JOIN exam_student es 
+ON es.student_id = s.id 
+JOIN exams e 
+ON e.id = es.exam_id 
+JOIN courses c 
+ON c.id = e.course_id 
+GROUP BY s.name , s.surname , c.name
+HAVING MAX(es.vote) >= 18
+;
