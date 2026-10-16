@@ -28,7 +28,16 @@ ON t.id = ct.teacher_id
 WHERE t.id = 44
 ;
 
-{/*Es: */}
+{/*Es: 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome*/}
+
+SELECT s.name AS student_name, s.surname AS student_surname, d.name AS degree_name, d2.name AS department_name
+FROM students s 
+JOIN degrees d 
+ON d.id = s.degree_id 
+JOIN departments d2 
+ON d2.id = d.department_id 
+ORDER BY s.surname ,s.name 
+;
 
 {/*Es: */}
 
