@@ -17,7 +17,16 @@ WHERE degrees.level = 'magistrale'
 AND d.id =7
 ;
 
-{/*Es: */}
+{/*Es: 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)*/}
+
+SELECT c.name AS course_name
+FROM courses c 
+JOIN course_teacher ct 
+ON ct.course_id = c.id 
+JOIN teachers t 
+ON t.id = ct.teacher_id 
+WHERE t.id = 44
+;
 
 {/*Es: */}
 
